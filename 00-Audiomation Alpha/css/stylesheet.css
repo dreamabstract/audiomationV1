@@ -1,0 +1,501 @@
+
+/*General Sytle Code*/
+* {
+	margin: 0;
+	padding:0;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #FFF;
+	font-weight: 200;
+}
+
+body {
+	position: absolute;
+	top:   0;
+	left:  0;
+	right: 0;
+	bottom:0;
+	overflow: hidden;
+}
+
+
+/*General Sytle Code*/
+a {
+	text-decoration: none;
+}
+
+h4 {
+	font-style: italic;
+}
+
+.activeButton {
+	color: #E13866;
+}
+
+.saveB:hover {
+	color: #E13866;
+	cursor: pointer;
+}
+
+.loadB:hover {
+	color: #E13866;
+	cursor: pointer;
+}
+
+#gridP span.activePriority {
+	background-color: #E13866;
+}
+
+#content{
+	position: absolute;
+	top:  0;
+	right:0;
+	height:100%;
+	width: 100%;
+	background: #2C2C2C;
+}
+
+#content #play {
+	background: #2C2C2C;
+}
+
+#title {
+	position: absolute;
+	font-size: 4.5em;
+	font-weight: 200;
+	left: 0;
+	right:0;
+	top: 35%;
+	letter-spacing: .15em;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+#I {
+	position: absolute;
+	left:  0;
+	right:0;
+	top: 50%;
+	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+#I .instrucitons {
+	display: inline;
+	vertical-align: auto;
+	background: #757575;
+	font-size: .5em;
+	font-weight: 100;
+	letter-spacing: .25em;
+	line-height: 1em;
+	border-radius: 5px;
+	padding: 7px 10px;
+	width: 170px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*MENU CODE*/
+
+/*---GENERAL MENU CODE*/
+
+.tMenu, .Menu {
+	position: absolute;
+	background: #4C4C4C;
+	height: 15px;
+	width: 100%;
+	font-size: .9em;
+	font-weight: 100;
+	letter-spacing: .1em;
+	text-align: center;
+	padding: 2% 0%;
+	border-color: #757575;
+	margin: 0px auto;
+}
+
+.divideLeft {
+	border-left: 2px solid #2C2C2C;
+}
+
+.divideRight {
+	border-right: 2px solid #2C2C2C;
+}
+
+/*------Top MENU CODE*/
+
+.tMenu {
+	top:-200px;
+	z-index: 400;
+}
+
+.tMenu div.topMenu {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+}
+
+.tMenu div div{
+	width: 24.5%;
+	float: left;
+}
+
+.tMenu p:hover, a:hover {
+	color: #E24988;
+	cursor: pointer;
+}
+
+.topMenu {
+	display: block;
+}
+
+/*------Bottom MENU CODE*/
+.Menu {
+	bottom:-200px;
+	z-index: 500;
+}
+
+.Menu div.bottomMenu {
+		width: 706px;
+		margin-left: auto;
+		margin-right: auto;
+}
+
+.Menu div div{
+	width: 150px;
+	float: left;
+}
+
+
+#bottomMenuTrigger{
+	width:100%;
+	position:absolute;
+	bottom:0;
+	height:12%;
+	z-index:1000;
+}
+
+.Menu p:hover, a:hover {
+	color: #E24988;
+	cursor: pointer;
+}
+
+#helpNav p:hover{
+	color: #E24988;
+	cursor: pointer;
+}
+
+/*MENU BUTTON CODE*/
+
+.Menu div div span {
+	width: 40px;
+	height: 40px;
+	border-radius: 24px;
+	background-color:  #E24988;
+	display: block;
+	border: 3px #FFF solid;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.Menu div div.menuButton {
+	border-left: 2px solid #2C2C2C;
+	border-right: 2px solid #2C2C2C;
+}
+
+.Menu div div.menuButton{
+	width:90px;
+}
+
+.Menu div div span:hover {
+	cursor: pointer;
+	background-color: #E13866;
+	border: 3px #AAA solid;
+}
+
+/*------Main MENU CODE*/
+
+#mainMenu {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	top: -2500px;
+	background-color: #2C2C2C;
+}
+
+#mainMenu span {
+	font-size: .75em;
+}
+
+.menuB:hover {
+	color: #E24988;
+	cursor: pointer;
+} 
+
+/*------side Menu CODE*/
+
+#globalMenu, #soundSettings {
+	position: absolute;
+	height: 50%;
+	width: 20%;
+	background: #2C2C2C;
+	margin-top: 200px;
+	top: 0%;
+}
+
+/*------Gobal Menu CODE*/
+#globalMenu {
+	left: 10%;
+	width: 10%;
+}
+
+#gS {
+	position: absolute;
+	margin-left: 15px;
+}
+
+#saveSettings {
+	position: relative;
+	top: 0%;
+	margin-top: 100px;
+}
+
+#sS {
+	position: absolute;
+	margin-left: 15px;
+}
+
+/*------Sound Settings CODE*/
+#soundSettings {
+	position: absolute;
+	float: right;
+	left: 75%;
+}
+
+#soundS , #binS{
+	margin-left: 15px;
+}
+
+#binSettings {
+	position: absolute;
+	top: 50%;
+}
+
+/*------Center Menu CODE*/
+#menuHolder {
+	position: relative;
+	width:  480px;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/*------Grid CODE*/
+
+#gridPriority {
+	position: absolute;
+	width: 440px;
+	margin-top: 163px;
+	margin-left: auto;
+	text-align: center;
+	font-weight: 300;
+	top: 0%;
+}
+
+#gridPriority div {
+	width: 20px;
+	display: inline;
+	float: left;
+}
+
+#gridPriority #gridP {
+	width: 108px;
+}
+
+#priorityCh {
+	margin-left: 162px;
+}
+
+#grid {
+	position: absolute;
+	width: 440px;
+	margin: 211px auto;
+	top: 0%;
+}
+	
+#grid span, #triggers span,#gridP span{
+    background-color: white;
+    border: 2px solid #BFBEBE;
+}
+
+#grid span,#triggers span,#gridP span{
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+    display: block;
+    float: left;
+    margin: 5px 10px;
+    cursor: pointer;
+}
+
+/*Tiggers*/
+
+#triggers {
+	position: absolute;
+	border-top: 3px white solid;
+	width: 440px;
+	margin: 400px auto;
+	clear: both;
+	top: 0%;
+}
+
+#triggers span {
+	opacity: 0.3;
+}
+
+#triggers span.active {
+	opacity: 1;
+}
+
+#triggers #trigger0,
+#grid .trigger0 {
+	background-color: #7B1315;
+}
+
+#triggers #trigger1,
+#grid .trigger1 {
+	background-color: #914E93;
+}
+
+#triggers #trigger2,
+#grid .trigger2 {
+	background-color: #4D5491;
+}
+
+#triggers #trigger3,
+#grid .trigger3 {
+	background-color: #4D828E;
+}
+
+#triggers #trigger4,
+#grid .trigger4 {
+	background-color: #4C8C53;
+}
+
+#triggers #trigger5,
+#grid .trigger5 {
+	background-color: #C4C338;
+}
+
+#triggers #trigger6,
+#grid .trigger6 {
+	background-color: #E2A52A;
+}
+
+#triggers #trigger7,
+#grid .trigger7 {
+	background-color: #B48188;
+}
+
+/*------Help MENU CODE*/
+
+#helpMenu {
+	position: absolute;
+	width: 100%;
+	top: 1000px;
+	z-index: 400;
+}
+
+#helpNav {
+	position: relative;
+	width: 180px;
+	left: 127px;
+	margin-top: 127px;
+	line-height: 1.4em;
+	letter-spacing: .1em;
+}
+
+#helpMenuContent {
+	position: absolute;
+	left: 360px;
+	top: 180px;
+	width: 520px;
+}
+
+#wiA {
+	text-align: center;
+	font-size: .75em;
+}
+
+#wiA span{
+	font-size: 1.5em;
+	font-weight: 100;
+}
+
+#wiA p, h5 {
+	text-align: left;
+}
+
+#wiA h5 {
+	font-size: 1em;
+	letter-spacing: .1em;
+	margin-top: .8em;
+	margin-bottom: .5em;
+}
+
+/*Animation CSS*/
+
+div.container{
+	width:  33%;
+	height: 250px;
+	background-color: red;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+div.box{
+	height: 250px;
+	background-color: white;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/*IDK*/
+
+#lobby {
+	position: fixed;
+	top: 50%;
+	left:50%;
+	overflow: visible;}
+
+#lobby #loader {
+	position: relative;
+	width:34;
+	height:34;
+	background:;
+	background-size: 16px;
+	margin: -16px;
+	border-radius: 50%;
+    -webkit-animation-name: rotate;
+    -moz-animation-name: rotate;
+    animation-name: rotate;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -moz-animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite; 
+	
+}
+
+

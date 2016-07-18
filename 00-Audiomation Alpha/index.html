@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>Audiomation Alpha</title>
+	
+	<!-- CSS -->
+	<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+    <script type="text/javascript" src="javascript/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	
+	<script type="text/javascript" src="javascript/script.js"></script>
+	
+    <script type="text/javascript" src="javascript/createjs_and_soundjs.js"></script>
+	
+	<!-- Animation Scripts -->
+	<script type="text/javascript" src="javascript/easeljs-NEXT.combined.js"></script>
+	<!--<script type="text/javascript" src="javascript/animation.js"></script>-->
+	<script type="text/javascript" src="javascript/animation.js"></script>
+	
+    <script type="text/javascript" src="javascript/iCheck/icheck.min.js"></script>
+	
+	
+    <link href="javascript/iCheck/futurico/futurico.css" rel="stylesheet" type="text/css">
+	
+	<!-- Angular Scripts -->	
+	<!--<link href="">-->
+	<!--<link href="">-->	
+	<!--<link href="">-->
+</head>
+<body>
+<!-- Play Screen -->
+	<canvas id="content">
+		<svg id="stage">
+
+			<g id="animation1">
+				<path id="something1" transform=""></path>
+				
+		</svg>
+	</canvas>
+<!-- Title-->
+	<div>
+		<p id="title">AUDIOMATION</p>
+	</div>
+<!-- Instructions -->
+	<div id="I" style="display: block;">
+		<p class="instrucitons">PRESS ANY KEY TO PLAY</p>
+	</div>
+<!-- Top Menu -->
+		<div class="tMenu" id="topMenu">
+			<div class="topMenu">
+				<div  id="triggerOptions" class="divideRight">
+					<p class="activeButton">TRIGGER OPTIONS</p>
+				</div>
+				<div id="kitOptions" class="divideRight">
+					<p>KIT OPTIONS</p>
+				</div>
+				<div  id="sequencerOptions" class="divideRight">
+					<p>SEQUENCER</p>
+				</div>
+				<div id="effectsOptions">
+					<p>EFFECTS</p>
+				</div>
+			</div>
+		</div>
+<!-- Main Menu -->
+		<div id="mainMenu">
+			<!-- Global Settings -->
+			<div id="globalMenu">
+				<div id="globalSettings">
+					<h4>Global Settings</h4><br>
+					<div id="gS">
+						<div id="channel">
+							<span>Channel:</span>
+							<span id="chA" class="menuB channel activeButton">A</span>
+							<span>|</span>
+							<span id="chB" class="menuB channel">B</span>
+						</div>
+						<div id="kitConfig">
+							<span>Kit:</span>
+							<span id="kitButton1" onclick="loadKit(this,0)" data-kit-id="0" class="menuB kit activeButton">1</span>
+							<span id="kitButton2" onclick="loadKit(this,1)" data-kit-id="1"  class="menuB kit">2</span>
+							<span id="kitButton3" onclick="loadKit(this,2)" data-kit-id="2"  class="menuB kit">3</span>
+							<span id="kitButton4" onclick="loadKit(this,3)" data-kit-id="3"  class="menuB kit">4</span>
+						</div>
+						<div id="gridTarget">
+							<span>Grid:</span>
+							<span id="aGrid" class="menuB gridSelection">A</span>
+							<span>|</span>
+							<span id="vGrid" class="menuB gridSelection">V</span>
+							<span>|</span>
+							<span id="avGrid" class="menuB gridSelection activeButton">A/V</span>
+							<span>|</span>
+						</div>
+						<div>
+							<span>BPM:</span>
+							<span>[</span><span id="BPM" class="menuB">120</span><span>]</span>
+						</div>
+					</div>
+				</div>
+				<!-- Save Settings -->
+				<div id="saveSettings">
+						<h4>Save Settings</h4><br>
+					<div id="sS">
+						<span class="saveB">Save channel</span><br>
+						<span class="saveB">Save Kit</span><br>
+						<span class="loadB">Load channel</span><br>
+						<span class="loadB">Load Kit</span>
+					</div>
+				</div>
+			</div>
+			<!-- Center Menu -->
+			<div id="menuHolder">
+				<div>
+						<div id="gridPriority">
+								<div id="priorityCh">
+									<span>Ch</span>
+								</div>
+								<div id="gridP">
+									<span class="activePriority"></span>
+									<span></span>
+								</div>
+								<div id="priorityKit">
+									<span>Kit</span>
+								</div>
+						</div>
+						
+					<div id="grid">
+					
+					</div>
+					<div id="sequencer">
+						<td>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</div>
+					<div id="triggers"> 
+						<span id="trigger0" data="0" class="triggerSelection active"></span>
+						<span id="trigger1" data="1" class="triggerSelection"></span>
+						<span id="trigger2" data="2" class="triggerSelection"></span>
+						<span id="trigger3" data="3" class="triggerSelection"></span>
+						<span id="trigger4" data="4" class="triggerSelection"></span>
+						<span id="trigger5" data="5" class="triggerSelection"></span>
+						<span id="trigger6" data="6" class="triggerSelection"></span>
+						<span id="trigger7" data="7" class="triggerSelection"></span>
+					</div>
+				</div>
+			</div>
+			<!-- Sound Settings -->
+			<div id="soundSettings">
+				<div>
+					<h4>Sound Settings</h4><br>
+					<div id="soundS">
+					<span onclick="loadSoundSetting(this,'Drums')" data-kit-id="0" class="menuB Drums activeButton">Drums</span>
+					<span onclick="loadSoundSetting(this,'Bass')" data-kit-id="1" class="menuB Bass">Bass</span><br>
+					<span onclick="loadSoundSetting(this,'Synth')" data-kit-id="2" class="menuB Synth">Synth</span>
+					<span onclick="loadSoundSetting(this,'Samples')" data-kit-id="3" class="menuB Samples">Samples</span>
+					</div>
+				</div>
+			<!-- Bin Settings 
+				<div id="binSettings">
+					<h4>Bin</h4><br>
+					<div id="binS">
+					<span class="menuB">1</span>
+					<span class="menuB">2</span>
+					<span class="menuB">3</span>
+					<span class="menuB">4</span><br>
+					<span class="loadB">Load Sound</span>
+					</div>
+				</div>-->
+			</div>
+		</div>
+<!-- Help & info Menus-->
+	<div id="bottomMenuTrigger"></div>
+	
+	<div class="Menu" id="bottomMenu">
+		<div class="bottomMenu">
+			<ul>
+				<div class="divideLeft" onclick="bottomOpenPage()">
+					<p>HELP/INFO</p>
+				</div>
+				<div class="divideLeft" onclick="bottomOpenPage()">
+					<p>CONTACT</p>
+				</div>
+				<div class="menuButton">
+					<span></span>
+				</div>
+				<div class="divideRight" onclick="bottomOpenPage()">
+					<p>SHARE</p>
+				</div>
+				<div class="divideRight" onclick="bottomOpenPage()">
+					<a href="https://soundcloud.com/dreamabstract" target="_blank">SOUND CLOUD</a>
+				</div>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<div id="helpMenu">
+		<div id="helpNav">
+			<p class="activeButton">What is Audiomation</p>
+			<p>Terminology</p>
+			<p>Hot Key List</p>
+			<p>Hot Key Tips</p>
+		</div>
+		<div id="helpMenuContent">
+			<div id="wiA">
+				<span>WHAT IS AUDIOMATION</span>
+				<div>
+				<p>AUDIOMATION is a interactive design project combining music and animaiton. it works on the concept of triggers. triggers is a name given to particualr hotkeys that trigger a sound and an animation. you can assign what trigger will play what sound as well as what animation. you can create collections of triggers that are grouped into kits. there are eight triggers per kit and four kits avaiable at a single time. there are two types of kits, audio & visual. these kits can be saved and loaded when you deciede to visit again!<p>
+
+<h5>THE SEQUENCER</h5>
+ 
+<p>The next major part of audiomation is the sequencer. You turn this on with with the () key.
+this starts a track head that loops after a set amount of time. When you play a note it will log it to the sequencer and play that note again when the track head starts the loop over.</p>
+
+<h5>HOT KEYS</h5>
+ 
+<p>Hot key is a term for any key on the key board that will have input into audiomation. This includes triggers, x, y, & z.</p>
+
+<h5>EFFECTS</h5>
+ 
+<p>efffects are different distortions that you can apply to any of the animations found with in the animation grid.</p>
+				</div>
+			</div>
+			<div id="terms"></div>
+			<div id="hkL"></div>
+			<div id="hkT"></div>
+		</div>
+	</div>
+</body>
+</html>
